@@ -14,13 +14,21 @@ function App() {
     }, []);
 
     const getItems = () => {
-        
+        axios.get('/shopping')
+        .then(response => {
+            setItemList(response.data)
+          })
+          .catch(error => {
+            alert('error getting items');
+            console.log(error);
+          })
     }
 
     return (
         <div className="App">
             <Header />
             <main>
+                <ItemForm getItems={getItems}/>
                 <p>Under Construction...</p>
             </main>
         </div>
