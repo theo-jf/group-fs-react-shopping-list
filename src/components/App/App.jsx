@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
 import ItemForm from '../ItemForm/ItemForm.jsx';
+import CartButtons from '../CartButtons/CartButtons.jsx';
 
 // PUT GET IN HERE :)
 function App() {
@@ -25,35 +26,12 @@ function App() {
           })
     }
 
-    // DELETE ALL
-    const clearCart = () => {
-        axios.delete('/shopping')
-        .then(response => {
-            console.log('All items removed', response);
-        })
-        .catch(error => {
-            alert('Error clearing cart');
-            console.log(error);
-        })
-    }
-
-    // RESET ALL PURCHASE STATUSES
-    const resetPurchases = () => {
-        axios.put('/shopping')
-        .then(response => {
-            console.log('Purchases reset', response);
-        })
-        .catch(error => {
-            alert('Error resetting purchases');
-            console.log(error);
-        })
-    }
-
     return (
         <div className="App">
             <Header />
             <main>
                 <ItemForm getItems={getItems}/>
+                <CartButtons getItems={getItems} />
                 <p>Under Construction...</p>
             </main>
         </div>
