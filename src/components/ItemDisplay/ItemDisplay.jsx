@@ -17,9 +17,18 @@ function ItemDisplay({ itemList, getItems }) {
         })
     }
     // DELETE route for 'Delete' Button
-    const handleDelete = () => {
-
+    const handleDelete = (id) => {
+        console.log(id);
+        axios({
+            method: 'DELETE',
+            url: `/shopping/${id}`
+        }).then((response) => {
+            getItems();
+        }).catch((error) => {
+            console.log('Handle Delete request not working:', error);
+        })
     }
+
 
     // return (
     //     itemList.map(item => {
@@ -45,7 +54,7 @@ function ItemDisplay({ itemList, getItems }) {
 
                     {item.purchased ? null : <button onClick={() => handlePurchased(item.id)}>Buy</button>}
 
-                    <button>Delete</button>
+                    <button onClick={() => handleDelete(item.id)}>Delete</button>
                 </section>
 
             ))}
