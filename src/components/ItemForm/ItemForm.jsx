@@ -35,7 +35,7 @@ function ItemForm({getItems}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <input onChange={(e) => setName(e.target.value)}
                     value={name}
                     placeholder="item name" />

@@ -42,7 +42,7 @@ function ItemDisplay({ itemList, getItems }) {
 
 
     return (
-        <>
+        <section className="items">
             {itemList.map(item => (
                 <section key={item.id} className="itemList">
                     <div>
@@ -58,7 +58,7 @@ function ItemDisplay({ itemList, getItems }) {
                 </section>
 
             ))}
-        </>
+        </section>
 
 
     )
