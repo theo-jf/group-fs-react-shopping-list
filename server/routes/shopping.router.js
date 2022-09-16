@@ -5,7 +5,8 @@ const pool = require('../modules/pool');
 // GET shopping list
 router.get('/', (req, res) => {
     // Get all of the items from the database
-    const sqlText = `SELECT * FROM list`;
+    const sqlText = `SELECT * FROM list
+                        ORDER BY "id" DESC`;
     pool.query(sqlText)
         .then((result) => {
             res.send(result.rows);
