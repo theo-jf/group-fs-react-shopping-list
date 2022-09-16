@@ -15,6 +15,9 @@ function ItemForm({getItems}) {
             .then(response => {
                 console.log('/shopping POST successful', response);
                 getItems();
+                setName('');
+                setQuantity('');
+                setUnits('');
             })
             .catch(error => {
                 console.log('/shopping POST error', error);
@@ -29,9 +32,6 @@ function ItemForm({getItems}) {
             units: units
         }
         addItem(item);
-        setName('');
-        setQuantity('');
-        setUnits('');
     }
 
     return (
