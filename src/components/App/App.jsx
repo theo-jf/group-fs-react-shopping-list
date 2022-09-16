@@ -25,6 +25,30 @@ function App() {
           })
     }
 
+    // DELETE ALL
+    const clearCart = () => {
+        axios.delete('/shopping')
+        .then(response => {
+            console.log('All items removed', response);
+        })
+        .catch(error => {
+            alert('Error clearing cart');
+            console.log(error);
+        })
+    }
+
+    // RESET ALL PURCHASE STATUSES
+    const resetPurchases = () => {
+        axios.put('/shopping')
+        .then(response => {
+            console.log('Purchases reset', response);
+        })
+        .catch(error => {
+            alert('Error resetting purchases');
+            console.log(error);
+        })
+    }
+
     return (
         <div className="App">
             <Header />
