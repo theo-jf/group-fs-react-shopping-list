@@ -29,6 +29,9 @@ function ItemForm({getItems}) {
             units: units
         }
         addItem(item);
+        setName('');
+        setQuantity('');
+        setUnits('');
     }
 
     return (
