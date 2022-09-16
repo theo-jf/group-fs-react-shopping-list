@@ -16,7 +16,8 @@ function App() {
     const getItems = () => {
         axios.get('/shopping')
         .then(response => {
-            setItemList(response.data)
+            setItemList(response.data);
+            console.log('GET success?', response.data);
           })
           .catch(error => {
             alert('error getting items');
