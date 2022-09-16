@@ -70,7 +70,7 @@ router.delete('/', (req, res) => {
 router.put('/:id', (req, res) => {
     const updateId = req.params.id;
     const sqlText = `UPDATE list
-                        "purchased" != "purchased"
+                        SET "purchased" = NOT "purchased"
                         WHERE "id" = $1;`
 
         pool.query(sqlText, [updateId])
@@ -88,7 +88,7 @@ router.put('/:id', (req, res) => {
 // PUT reset purchase status
 router.put('/', (req, res) => {
     const sqlText = `UPDATE list
-                        SET "purchased" = NOT "purchased"
+                       SET "purchased" = NOT "purchased"
                         WHERE "purchased" = true;`
 
         pool.query(sqlText)

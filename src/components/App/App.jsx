@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
 import ItemForm from '../ItemForm/ItemForm.jsx';
+import ItemDisplay from '../ItemDisplay/ItemDisplay.jsx'
 import CartButtons from '../CartButtons/CartButtons.jsx';
 
 // PUT GET IN HERE :)
@@ -32,7 +33,7 @@ function App() {
             <main>
                 <ItemForm getItems={getItems}/>
                 <CartButtons getItems={getItems} />
-                <p>Under Construction...</p>
+                <ItemDisplay itemList={itemList} getItems={getItems}/>
             </main>
         </div>
     );
