@@ -1,4 +1,34 @@
 main {
+  text-align: center;
   width: 90%;
   margin: auto;
+}
+
+button {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.itemList {
+  text-align: center;
+  border: 1px, solid, black;
+  border-style:ridge;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  background-color: khaki;
+  filter: drop-shadow(2px 5px 4px rgba(0, 0, 0, 0.257));
+}
+
+.items {
+  padding: 40px;
+  font-size: 30px;
+}
+
+.cartButtons {
+  padding-top: 10px;
+}
+
+.form {
+  margin: 30px;
 }

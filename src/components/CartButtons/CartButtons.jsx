@@ -29,10 +29,10 @@ function CartButtons({getItems}) {
     }
    
     return (
-        <>
+        <section class="cartButtons">
             <button onClick={resetPurchases}>Reset Purchases</button>
             <button onClick={clearCart}>Clear Purchases</button>
-        </>
+        </section>
     );
 }
 

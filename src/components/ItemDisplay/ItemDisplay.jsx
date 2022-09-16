@@ -42,7 +42,7 @@ function ItemDisplay({ itemList, getItems }) {
 
 
     return (
-        <>
+        <section className="items">
             {itemList.map(item => (
                 <section key={item.id} className="itemList">
                     <div>
@@ -52,13 +52,13 @@ function ItemDisplay({ itemList, getItems }) {
                         {item.quantity}  {item.units}
                     </div>
 
-                    {item.purchased ? null : <button onClick={() => handlePurchased(item.id)}>Buy</button>}
+                    {item.purchased ? <button onClick={() => handlePurchased(item.id)}>Undo Purchase</button> : <button onClick={() => handlePurchased(item.id)}>Buy</button>}
 
                     <button onClick={() => handleDelete(item.id)}>Delete</button>
                 </section>
 
             ))}
-        </>
+        </section>
 
 
     )

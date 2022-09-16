@@ -15,6 +15,9 @@ function ItemForm({getItems}) {
             .then(response => {
                 console.log('/shopping POST successful', response);
                 getItems();
+                setName('');
+                setQuantity('');
+                setUnits('');
             })
             .catch(error => {
                 console.log('/shopping POST error', error);
@@ -32,7 +35,7 @@ function ItemForm({getItems}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <input onChange={(e) => setName(e.target.value)}
                     value={name}
                     placeholder="item name" />
