@@ -31,7 +31,7 @@ function App() {
             <Header />
             <main>
                 <ItemForm getItems={getItems}/>
-                <ItemDisplay itemList={itemList}/>
+                <ItemDisplay itemList={itemList} getItems={getItems}/>
                 <p>Under Construction...</p>
             </main>
         </div>
